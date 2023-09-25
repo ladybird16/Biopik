@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const mainRoute = () => {
+const MainRoute = () => {
   return (
     <View>
-      <Text>mainRoute</Text>
+      <Text>MainRoute</Text>
     </View>
   )
 }
 
-export default mainRoute
+export default MainRoute
