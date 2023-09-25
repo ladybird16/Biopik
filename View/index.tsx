@@ -1,11 +1,17 @@
 import { View, Text } from 'react-native'
+import 'react-native-gesture-handler';
 import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack';
+import LogInSignUp from './LogInSignUp';
+import Home from './Home';
 
+const Stack = createStackNavigator();
 const MainRoute = () => {
   return (
-    <View>
-      <Text>MainRoute</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="LogInSignUp" component={LogInSignUp} />
+      <Stack.Screen name="Home" component={Home} />
+    </Stack.Navigator>
   )
 }
 
