@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const OrderDetails = () => {
+const FrontPageView = () => {
   return (
     <View>
-      <Text>OrderDetails</Text>
+      <Text>FrontPageView</Text>
     </View>
   )
 }
 
-export default OrderDetails
+export default FrontPageView
