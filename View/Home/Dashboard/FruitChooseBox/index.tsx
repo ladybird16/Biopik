@@ -5,7 +5,7 @@ import FruitChooseBoxView from './FruitChooseBoxView'
 const FruitChooseBox = ({navigation,route}:FruitChooseBoxProps) => {
   return (
     <View>
-      <FruitChooseBoxView navigation={navigation}/>
+      <FruitChooseBoxView />
     </View>
   )
 }
