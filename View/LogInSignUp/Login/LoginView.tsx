@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-const LoginView = () => {
+const LoginView = ({navigation}:LoginViewProps) => {
   const {
     control,
     handleSubmit,
@@ -129,7 +129,7 @@ const LoginView = () => {
       <View style={{marginTop:20}}><Text style={{color: 'black', fontSize: 16, textAlign: 'center'}}>
           Dont't have an account?{' '}
           <Text
-            // onPress={() => navigation.navigate('Signup')}
+            onPress={() => navigation.navigate('Signup')}
             style={{fontWeight: 'bold'}}>
             Signup
           </Text>
@@ -147,3 +147,6 @@ const LoginView = () => {
 };
 
 export default LoginView
+interface LoginViewProps{
+  navigation?:any;
+}
