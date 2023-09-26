@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const VegChooseBoxView = () => {
+const VegChooseBoxView = ({navigation,route}:VegChooseBoxProps) => {
   return (
     <View>
       <Text>VegChooseBoxView</Text>
@@ -10,3 +10,7 @@ const VegChooseBoxView = () => {
 }
 
 export default VegChooseBoxView
+interface VegChooseBoxProps{
+  navigation?: any;
+  route?: any;
+}
