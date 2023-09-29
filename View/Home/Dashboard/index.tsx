@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import FrontPage from './FrontPage';
@@ -6,12 +5,14 @@ import FruitChooseBox from './FruitChooseBox';
 import FruitChooseItem from './FruitChooseItem';
 import VegChooseBox from './VegChooseBox';
 import VegChooseItem from './VegChooseItem';
+import { Text, View } from 'react-native';
+
 const Stack = createStackNavigator();
 
 
 const Dashboard = () => {
   return (
-    <Stack.Navigator 
+    <Stack.Navigator initialRouteName='FrontPage'
     // screenOptions={{headerShown:false,gestureEnabled:true}}
     >
        <Stack.Screen name="FrontPage" component={FrontPage} />
@@ -23,4 +24,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

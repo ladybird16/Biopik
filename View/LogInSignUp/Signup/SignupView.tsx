@@ -23,6 +23,7 @@ const SignupView = ({navigation}:SignupViewProps) => {
         // Add more security questions as needed
       ];
       const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+   
   return (
     <ScrollView style={{paddingBottom:10,marginBottom:10,backgroundColor:'yellow',marginTop:50}}>
     <View >
@@ -146,6 +147,10 @@ const SignupView = ({navigation}:SignupViewProps) => {
         control={control}
         rules={{
           required: true,
+          pattern: {
+            value: /^[^$,#]{8}$/,
+            message: 'Password must be 8 characters long and not contain $, #, or ,',
+          },
           
         }}
         render={({field: {onChange, onBlur, value}}) => (

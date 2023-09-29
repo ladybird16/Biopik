@@ -12,7 +12,8 @@ import { NavigationContainer } from '@react-navigation/native';
 // import { NavigationContainer } from '@react-navigation/native';
 // import{Provider as StoreProvider} from 'react-redux';
 // import ConfigureStore from './Stores/configureStore';
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
+// import DrawerNavigator from './View/Home/Dashboard/FrontPage/drawer';
 
 function App(): JSX.Element {
  
@@ -22,7 +23,6 @@ function App(): JSX.Element {
     //<StoreProvider store={store}>
     <NavigationContainer>
       <MainRoute />
-    
     </NavigationContainer>
    // </StoreProvider>
 
