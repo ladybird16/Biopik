@@ -8,6 +8,7 @@
 import React, { useEffect } from 'react';
 import MainRoute from './View';
 import { NavigationContainer } from '@react-navigation/native';
+
 // import { NavigationContainer } from '@react-navigation/native';
 // import{Provider as StoreProvider} from 'react-redux';
 // import ConfigureStore from './Stores/configureStore';

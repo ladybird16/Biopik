@@ -24,7 +24,7 @@ const SignupView = ({navigation}:SignupViewProps) => {
       ];
       const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   return (
-    <ScrollView style={{paddingBottom:10,marginBottom:10}}>
+    <ScrollView style={{paddingBottom:10,marginBottom:10,backgroundColor:'yellow',marginTop:50}}>
     <View >
      
       
@@ -257,7 +257,7 @@ const SignupView = ({navigation}:SignupViewProps) => {
             marginBottom: 10,
             backgroundColor:'white'
           }}>
-          <Text style={{color: '#154d19', fontSize: 19}}>SIGNUP</Text>
+          <Text style={{color: '#154d19', fontSize: 19}}>Submit</Text>
         </TouchableOpacity>
 
      
