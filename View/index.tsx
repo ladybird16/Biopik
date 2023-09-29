@@ -8,10 +8,12 @@ import Home from './Home';
 const Stack = createStackNavigator();
 const MainRoute = () => {
   return (
-    <Stack.Navigator  screenOptions={{ headerShown: false }}>
-         <Stack.Screen name="Home" component={Home} />
+    // <Stack.Navigator screenOptions={{headerShown:false}}>
+    //   <Stack.Screen name="LogInSignUp" component={LogInSignUp}  />
+    //   <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="LogInSignUp" component={LogInSignUp} />
-    
     </Stack.Navigator>
   )
 }

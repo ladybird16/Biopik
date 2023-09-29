@@ -18,30 +18,15 @@ const FrontPageView = () => {
     require('../images/banner1.png'),
   ]
 
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import React from 'react'
+import VegChooseBox from '../VegChooseBox'
+import FruitChooseBox from '../FruitChooseBox'
+
+const FrontPageView = ({navigation}:FrontPageViewProps) => {
   return (
     <View>
-      <SafeAreaView>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Welcome, {customerName}</Text>
-        </View>
-        <View style={{flex: 1, height: 100, width: 100, marginTop: 10}}>
-          <View
-            style={{
-              height: height / 3,
-              width: width,
-              
-            }}>
-              {/* <FlatList
-            data={placeholders}
-            horizontal
-            renderItem={renderItem}
-            keyExtractor={(item, index) => index.toString()}
-            showsHorizontalScrollIndicator={true}
-          /> */}
-          <SliderBox/>
-            </View>
-        </View>
-      </SafeAreaView>
+      <Text>FrontPageView</Text>
     </View>
   );
 };
@@ -82,6 +67,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'gray', // Placeholder color (grey)
   },
+  button: {
+    backgroundColor: '#68d96f',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // borderColor: 'orange',
+    // borderWidth: 1.5,
+    elevation:5,
+    // width:70
+  },
 });
 
 export default FrontPageView;
+
+interface FrontPageViewProps{
+  navigation?: any;
+}
