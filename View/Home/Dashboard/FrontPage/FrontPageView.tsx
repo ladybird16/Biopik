@@ -1,10 +1,12 @@
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Dimensions,} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import {FlatList, } from 'react-native-gesture-handler';
+import VegChooseBox from '../VegChooseBox'
+import FruitChooseBox from '../FruitChooseBox'
 
 const {height, width} = Dimensions.get('window');
-const FrontPageView = () => {
+const FrontPageView = ({navigation}:FrontPageViewProps) => {
   const customerName = 'Arijit';
   // const placeholders = [
   //   require('../images/banner1.png'), 2, 3, 4];
@@ -17,19 +19,10 @@ const FrontPageView = () => {
   const images =[
     require('../images/banner1.png'),
   ]
+}
 
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react'
-import VegChooseBox from '../VegChooseBox'
-import FruitChooseBox from '../FruitChooseBox'
 
-const FrontPageView = ({navigation}:FrontPageViewProps) => {
-  return (
-    <View>
-      <Text>FrontPageView</Text>
-    </View>
-  );
-};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -79,8 +72,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FrontPageView;
+
 
 interface FrontPageViewProps{
   navigation?: any;
 }
+export default FrontPageView;
