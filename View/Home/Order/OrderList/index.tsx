@@ -2,15 +2,20 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import OrderDetailView from './OrderListView'
 import StepIndicator from 'react-native-step-indicator';
+import OrderListView from './OrderListView';
  
 
-const OrderList = () => {
+const OrderList = ({navigation}: OrderListProps) => {
 
   return (
     <View>
-      <OrderDetailView/>
+      <OrderListView />
     </View>
   )
 }
 
 export default OrderList
+
+interface OrderListProps {
+  navigation?: any;
+}
