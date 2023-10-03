@@ -281,7 +281,7 @@ const OrderListView = () => {
         </Modal>
       </View>
 
-
+<Text style={{color:'#42f5a7'}}>Add new item</Text>
 
 
     </ScrollView>
@@ -369,7 +369,8 @@ const styles = StyleSheet.create({
     borderColor: 'green',
     borderWidth: 1,
     padding: 10,
-    paddingBottom:20
+    paddingBottom:10,
+    marginBottom:10
   
     // borderRadius: 10,
   },
