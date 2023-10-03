@@ -20,15 +20,16 @@ const Drawer1 = () => {
             <>
    
           <Drawer.Navigator screenOptions={{
-headerShown:true,
-headerStyle:{
-backgroundColor:'white',
-elevation:0,
-shadowOpacity:0,},
-}}>
+                                                  headerShown:true,
+                                                  headerStyle:{
+                                                  backgroundColor:'white',
+                                                  elevation:0,
+                                                  shadowOpacity:0,},
+
+                                                  }}>
           <Drawer.Screen name=" " component={LogInSignUp} />
             <Drawer.Screen name="About Us" component={AboutUs} />
-            <Drawer.Screen name="Feedback" component={Feedback} />
+            <Drawer.Screen name="Feedback" component={Feedback}  />
             
           </Drawer.Navigator>
           </>

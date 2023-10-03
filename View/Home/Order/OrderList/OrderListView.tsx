@@ -231,6 +231,57 @@ const OrderListView = () => {
 
 
 
+      <View>
+        <TouchableOpacity onPress={openModal}>
+          <View style={styles.list}>
+            <Text style={styles.Boxname}> KWS Mini Box</Text>
+            <Text style={styles.weight}> Order ID:</Text>
+            <Text style={styles.weight}> Delivery Expected By:</Text>
+            <View style={styles.stepIndi}>
+              <StepIndicator
+                customStyles={customStyles}
+                currentPosition={currentPosition}
+                labels={labels}
+                //direction="vertical"
+                // renderLabel={({position,stepStatus,label,currentPosition})=>{
+                //   return(
+                //     <View  style={styles.lblContainer}>
+                //       <Text style={styles.lblText}>{data[position].label}</Text>
+                //       <Text style={styles.status}>{data[position].status}</Text>
+                //       <Text style={styles.status}>{data[position].dateTime}</Text>
+                //       </View>
+                //   )
+                // }}
+              />
+            </View>
+
+            <Image
+              source={{
+                uri: 'https://media.istockphoto.com/id/160356158/photo/fruits-and-veggies-in-wood-box-with-white-backdrop.jpg?s=612x612&w=0&k=20&c=WMWJuSBYbXtk7gfGCb3FkI2Eycd_2TkwQv8W34rUAQY=',
+              }}
+              style={styles.image}
+            />
+          </View>
+        </TouchableOpacity>
+
+        <Modal visible={isModalVisible} transparent animationType="slide">
+          <TouchableOpacity
+            style={styles.modalContainer}
+            activeOpacity={1} // Prevents the modal from closing immediately on touch
+            onPress={closeModal}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>Vegetable List</Text>
+              <FlatList
+                data={vegetableData}
+                renderItem={renderItem}
+                keyExtractor={item => item.id.toString()}
+              />
+            </View>
+          </TouchableOpacity>
+        </Modal>
+      </View>
+
+
 
 
     </ScrollView>
@@ -338,6 +389,7 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
   vegetableItemContainer: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
