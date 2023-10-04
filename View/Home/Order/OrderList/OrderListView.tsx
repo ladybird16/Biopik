@@ -11,6 +11,7 @@ import {
   ScrollView,
 } from 'react-native';
 import StepIndicator from 'react-native-step-indicator';
+import OrderDetailsView from '../OrderDetails/OrderDetailsView';
 
 const {width, height} = Dimensions.get('window');
 const labels = [
@@ -45,7 +46,7 @@ const customStyles = {
   currentStepLabelColor: '#fe7013',
 };
 
-const OrderListView = () => {
+const OrderListView = ({navigation}:OrderListViewProps) => {
   const [currentPosition, setCurrentPosition] = useState(0);
 
  
@@ -173,19 +174,19 @@ const OrderListView = () => {
     );
   };
   return (
-    
-    <ScrollView  style={styles.productlist}>
+    <View  style={styles.container}>
+    <ScrollView style={styles.productlist} >
       <Text style={styles.productName}>My Orders</Text>
 
 
       <View>
-        <TouchableOpacity onPress={openModal}>
+        <TouchableOpacity onPress={()=> navigation.navigate('OrderDetail')}>
           <View style={styles.list}>
             <Text style={styles.Boxname}> KWS Jumbo Box</Text>
-            <Text style={styles.weight}> Order ID:</Text>
-            <Text style={styles.weight}> Delivery Expected By:</Text>
+            <Text style={styles.weight}> Order ID:1</Text>
+            <Text style={styles.weight}> Delivery on:05/10/2023</Text>
             <View style={styles.stepIndi}>
-              <StepIndicator
+              {/* <StepIndicator
                 customStyles={customStyles}
                 currentPosition={currentPosition}
                 labels={labels}
@@ -199,7 +200,7 @@ const OrderListView = () => {
                 //       </View>
                 //   )
                 // }}
-              />
+              /> */}
             </View>
 
             <Image
@@ -227,18 +228,19 @@ const OrderListView = () => {
           </TouchableOpacity>
         </Modal>
       </View>
+
 
 
 
 
       <View>
-        <TouchableOpacity onPress={openModal}>
+        <TouchableOpacity onPress={()=> navigation.navigate('OrderDetail')}>
           <View style={styles.list}>
             <Text style={styles.Boxname}> KWS Mini Box</Text>
-            <Text style={styles.weight}> Order ID:</Text>
-            <Text style={styles.weight}> Delivery Expected By:</Text>
+            <Text style={styles.weight}> Order ID:2</Text>
+            <Text style={styles.weight}> Delivery on:05/10/2023</Text>
             <View style={styles.stepIndi}>
-              <StepIndicator
+              {/* <StepIndicator
                 customStyles={customStyles}
                 currentPosition={currentPosition}
                 labels={labels}
@@ -252,7 +254,7 @@ const OrderListView = () => {
                 //       </View>
                 //   )
                 // }}
-              />
+              /> */}
             </View>
 
             <Image
@@ -281,51 +283,63 @@ const OrderListView = () => {
         </Modal>
       </View>
 
-<Text style={{color:'#42f5a7'}}>Add new item</Text>
+
+
+
+     
+
+
 
 
     </ScrollView>
+    </View>
   );
 };
 
 export default OrderListView;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 0,
+   
+  },
   list: {
     backgroundColor: 'white',
     borderBlockColor: 'green',
-    marginHorizontal: 20,
+    marginHorizontal: 2,
     marginVertical:5,
     borderColor: 'green',
     borderWidth: 1,
-    padding: 10,
+    padding: 0,
     borderRadius: 10,
+    
  
   },
   image: {
-    width: 300,
-    height: 150,
+    width: 100,
+    height: 100,
     resizeMode: 'contain',
-    marginTop: 10,
+    marginTop: -100,
   },
   stepIndi: {
     marginTop: 20,
   },
   productName: {
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
     marginLeft: 110,
-    fontSize: 30,
-    color: 'white',
+    fontSize: 25,
+    color: 'black',
+  
   },
   Boxname: {
     fontWeight: 'bold',
-    marginLeft: 85,
+    marginLeft: 100,
     fontSize: 25,
     color: 'green',
   },
   weight: {
     fontWeight: 'bold',
-    marginLeft: 90,
+    marginLeft: 100,
     fontSize: 15,
   },
   modalContainer: {
@@ -364,14 +378,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   productlist: {
-    backgroundColor: '#42f5a7',
+    backgroundColor: 'white',
+    
     borderBlockColor: 'green',
     borderColor: 'green',
-    borderWidth: 1,
+   // borderWidth: 1,
     padding: 10,
-    paddingBottom:10,
-    marginBottom:10
-  
+    paddingBottom:1000,
+    marginBottom:10,
     // borderRadius: 10,
   },
   lblContainer: {
@@ -407,3 +421,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+
+interface OrderListViewProps{
+  navigation?:any;
+ 
+}

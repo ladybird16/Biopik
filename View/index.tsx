@@ -13,12 +13,13 @@ const MainRoute = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
        
-      
+       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Drawer" component={Drawer1} />
       
       <Stack.Screen name="LogInSignUp" component={LogInSignUp}  />
+     
    
-      <Stack.Screen name="Home" component={Home} />
+  
      {/* <Stack.Screen name="Login" component={Drawer1} /> */}
     </Stack.Navigator>
   )
