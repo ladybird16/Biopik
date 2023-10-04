@@ -9,7 +9,7 @@ const OrderList = ({navigation}: OrderListProps) => {
 
   return (
     <View>
-      <OrderListView />
+      <OrderListView navigation={navigation}/>
     </View>
   )
 }
