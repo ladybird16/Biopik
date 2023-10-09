@@ -2,10 +2,10 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import OrderDetailsView from './OrderDetailsView'
 
-const OrderDetail = ({navigation}:OrderDetailProps) => {
+const OrderDetail = ({ navigation }: OrderDetailProps) => {
   return (
     <View>
-    <OrderDetailsView navigation={navigation}/>
+      <OrderDetailsView navigation={navigation} />
     </View>
   )
 }

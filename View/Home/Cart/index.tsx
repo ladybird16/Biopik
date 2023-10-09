@@ -1,12 +1,28 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {View, ScrollView} from 'react-native';
 
-const Cart = () => {
+const SquareView = (props:any) => {
   return (
-    <View>
-      <Text>Cart</Text>
-    </View>
-  )
-}
+    <View
+      style={{
+        height: props.size,
+        width: props.size,
+        backgroundColor: props.color,
+      }}
+    />
+  );
+};
 
-export default Cart
+export default function HomeScreen() {
+  return (
+    <ScrollView horizontal={true} >
+      <SquareView size={100} color="red" />
+      <SquareView size={100} color="blue" />
+      <SquareView size={100} color="green" />
+      <SquareView size={100} color="yellow" />
+      <SquareView size={100} color="gray" />
+      <SquareView size={100} color="cyan" />
+      <SquareView size={100} color="black" />
+    </ScrollView>
+  );
+}

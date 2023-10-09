@@ -22,140 +22,15 @@ const labels = [
   'Delivered',
 ];
 
-const customStyles = {
-  stepIndicatorSize: 25,
-  currentStepIndicatorSize: 30,
-  separatorStrokeWidth: 2,
-  currentStepStrokeWidth: 3,
-  stepStrokeCurrentColor: '#fe7013',
-  stepStrokeWidth: 3,
-  stepStrokeFinishedColor: '#fe7013',
-  stepStrokeUnFinishedColor: '#aaaaaa',
-  separatorFinishedColor: '#fe7013',
-  separatorUnFinishedColor: '#aaaaaa',
-  stepIndicatorFinishedColor: '#fe7013',
-  stepIndicatorUnFinishedColor: '#ffffff',
-  stepIndicatorCurrentColor: '#ffffff',
-  stepIndicatorLabelFontSize: 13,
-  currentStepIndicatorLabelFontSize: 13,
-  stepIndicatorLabelCurrentColor: '#fe7013',
-  stepIndicatorLabelFinishedColor: '#ffffff',
-  stepIndicatorLabelUnFinishedColor: '#aaaaaa',
-  labelColor: '#999999',
-  labelSize: 13,
-  currentStepLabelColor: '#fe7013',
-};
 
 const OrderListView = ({navigation}:OrderListViewProps) => {
   const [currentPosition, setCurrentPosition] = useState(0);
 
  
 
-  // useEffect(() => {
-  //   // Fetch data from the API
-  //   fetch('https://mocki.io/v1/62a6da43-7d6f-4122-93e4-f2d6add1dc42')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setVegetableData(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching data:', error);
-  //     });
-  // }, []);
-
-  const data = [
-    {
-      label: 'Ordered And Approved',
-      status: 'Your order has been placed.',
-      dateTime: 'Sun, 24th Sep',
-    },
-    {
-      label: 'Picked',
-      status: 'Your item has been picked.',
-      dateTime: 'Mon, 25th Sep',
-    },
-    {
-      label: 'Out of Delivery',
-      status: 'Your item is out of delivery.',
-      dateTime: 'Tus, 26th Sep',
-    },
-    {
-      label: 'Delivered',
-      status: 'Your itemhas been delivered.',
-      dateTime: 'Tus, 26th Sep',
-    },
-  ];
-
+ 
   const [isModalVisible, setModalVisible] = useState(false);
-  const [vegetableData, setVegetableData] = useState([
-    {
-      id: 1,
-      name: 'CARROT',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fshop.organicmandya.com%2Fproducts%2Fcarrot-ooty-raw&psig=AOvVaw3TNm7e5FLCOgwoqgvdqzgR&ust=1695986679972000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLCXtO6YzYEDFQAAAAAdAAAAABAE',
-    },
-    {
-      id: 2,
-      name: 'TOMATO',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTomato&psig=AOvVaw2Ps9ZihrRMaxRH4Q8gpRww&ust=1695986722766000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjbzIKZzYEDFQAAAAAdAAAAABAE',
-    },
-    {
-      id: 3,
-      name: 'CUCUMBER',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FFresh-Cucumber-500g-Pack%2Fdp%2FB07BG7B7WB&psig=AOvVaw2YFFFj1-FLINg4voEiSqgK&ust=1695986747995000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCDyI6ZzYEDFQAAAAAdAAAAABAE',
-    },
-    {
-      id: 4,
-      name: 'BROCCOLI',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Forganicbazar.net%2Fproduct%2Fbroccoli-seeds-hybrid%2F&psig=AOvVaw1R-hnk_FIxPNQa9CohqzLR&ust=1695986792964000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCohKSZzYEDFQAAAAAdAAAAABAK',
-    },
-    {
-      id: 5,
-      name: 'SPINACH',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsahajaaharam.com%2Fleafy-vegetables%2Fpalak-fetma&psig=AOvVaw3MouclKTRyN2D0onl_rWin&ust=1695986911112000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPif_d2ZzYEDFQAAAAAdAAAAABAE',
-    },
-    {
-      id: 6,
-      name: 'RED AMARANTHUS',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodfoodtoall.com%2Fproduct%2Famaranthus-red-green-seeds%2F&psig=AOvVaw3wjKYYjYiuhw5pbrsv2aaM&ust=1695986952568000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjho_KZzYEDFQAAAAAdAAAAABAR.jpg',
-    },
-    {
-      id: 7,
-      name: 'WATER SPINACH',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FPlanthub-Spinach-Kangkong-aquatica-Vegetable%2Fdp%2FB07R6FHD34&psig=AOvVaw0vcEz_4-r-EXMCz5UOGXwr&ust=1695987052872000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCHiqGazYEDFQAAAAAdAAAAABAE',
-    },
-    {
-      id: 8,
-      name: 'CHILLI LIGHT GREEN',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fgourmetgarden.in%2Fproducts%2Fgarlic&psig=AOvVaw34gmFlJkrLA-mCdpsu-j_R&ust=1695987110668000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMC69ruazYEDFQAAAAAdAAAAABAJ',
-    },
-    {
-      id: 9,
-      name: 'PUMPKIN RED',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kanchiorganicfarms.com%2Fproduct%2Fred-pumpkin%2F&psig=AOvVaw3nQRIdYtr2DF59n_xfbp4Q&ust=1695987179970000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPiMp92azYEDFQAAAAAdAAAAABAJ',
-    },
-    {
-      id: 10,
-      name: 'SWEET POTATO',
-      image:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Flovepik.com%2Fimage-501118856%2Ffresh-sweet-potatoes.html&psig=AOvVaw1AuYlK1dOmx-d3diHI_7ZS&ust=1695987232079000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDruvWazYEDFQAAAAAdAAAAABAE',
-    },
-  ]);
-  // const [vegtableData, setVegtableData] = useState([
-  //   { id: 6, name: 'RED AMARANTHUS ' },
-  //   { id: 7, name: 'WATER SPINACH' },
-  //   { id: 8, name: 'CHILLI LIGHT GREEN' },
-  //   { id: 9, name: 'PUMPKIN RED' },
-  //   { id: 10, name: 'SWEET POTATO' },
-  // ]);
+
 
   const openModal = () => {
     setModalVisible(true);
@@ -165,7 +40,7 @@ const OrderListView = ({navigation}:OrderListViewProps) => {
     setModalVisible(false);
   };
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item}:any) => {
     return (
       <View style={styles.vegetableItemContainer}>
         <Image source={{uri: item.image}} style={styles.vegetableImage} />
@@ -186,21 +61,7 @@ const OrderListView = ({navigation}:OrderListViewProps) => {
             <Text style={styles.weight}> Order ID:1</Text>
             <Text style={styles.weight}> Delivery on:05/10/2023</Text>
             <View style={styles.stepIndi}>
-              {/* <StepIndicator
-                customStyles={customStyles}
-                currentPosition={currentPosition}
-                labels={labels}
-                //direction="vertical"
-                // renderLabel={({position,stepStatus,label,currentPosition})=>{
-                //   return(
-                //     <View  style={styles.lblContainer}>
-                //       <Text style={styles.lblText}>{data[position].label}</Text>
-                //       <Text style={styles.status}>{data[position].status}</Text>
-                //       <Text style={styles.status}>{data[position].dateTime}</Text>
-                //       </View>
-                //   )
-                // }}
-              /> */}
+          
             </View>
 
             <Image
@@ -212,21 +73,6 @@ const OrderListView = ({navigation}:OrderListViewProps) => {
           </View>
         </TouchableOpacity>
 
-        <Modal visible={isModalVisible} transparent animationType="slide">
-          <TouchableOpacity
-            style={styles.modalContainer}
-            activeOpacity={1} // Prevents the modal from closing immediately on touch
-            onPress={closeModal}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalTitle}>Vegetable List</Text>
-              <FlatList
-                data={vegetableData}
-                renderItem={renderItem}
-                keyExtractor={item => item.id.toString()}
-              />
-            </View>
-          </TouchableOpacity>
-        </Modal>
       </View>
 
 
@@ -240,21 +86,7 @@ const OrderListView = ({navigation}:OrderListViewProps) => {
             <Text style={styles.weight}> Order ID:2</Text>
             <Text style={styles.weight}> Delivery on:05/10/2023</Text>
             <View style={styles.stepIndi}>
-              {/* <StepIndicator
-                customStyles={customStyles}
-                currentPosition={currentPosition}
-                labels={labels}
-                //direction="vertical"
-                // renderLabel={({position,stepStatus,label,currentPosition})=>{
-                //   return(
-                //     <View  style={styles.lblContainer}>
-                //       <Text style={styles.lblText}>{data[position].label}</Text>
-                //       <Text style={styles.status}>{data[position].status}</Text>
-                //       <Text style={styles.status}>{data[position].dateTime}</Text>
-                //       </View>
-                //   )
-                // }}
-              /> */}
+              
             </View>
 
             <Image
@@ -266,21 +98,7 @@ const OrderListView = ({navigation}:OrderListViewProps) => {
           </View>
         </TouchableOpacity>
 
-        <Modal visible={isModalVisible} transparent animationType="slide">
-          <TouchableOpacity
-            style={styles.modalContainer}
-            activeOpacity={1} // Prevents the modal from closing immediately on touch
-            onPress={closeModal}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalTitle}>Vegetable List</Text>
-              <FlatList
-                data={vegetableData}
-                renderItem={renderItem}
-                keyExtractor={item => item.id.toString()}
-              />
-            </View>
-          </TouchableOpacity>
-        </Modal>
+       
       </View>
 
 
