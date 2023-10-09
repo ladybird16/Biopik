@@ -26,7 +26,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
     </View> */}
     {/* <View style={{marginTop:15,marginLeft:10}}>
       <Text style={{fontSize:17}}>Login into your Account</Text></View> */}
-      <View style={{marginTop:20,marginLeft:130}}>
+      <View style={{marginTop:10,marginLeft:130}}>
           <Image
             source={require('../../../image/logo.png')}
             style={{}}
@@ -34,7 +34,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
         </View>
     
     <View style ={{backgroundColor:'#68d96f',
-        marginTop:10,
+        marginTop:20,
         marginLeft:30,
         marginRight:30,
         borderTopLeftRadius: 50, // Adjust the value to control the radius
@@ -111,7 +111,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
 
         /> */}
         <TouchableOpacity>
-        <View style={{marginLeft:210}}>
+        <View style={{marginLeft:230,marginTop:10}}>
         <Text style={{color: 'white', fontSize: 16}}
          onPress={() => navigation.navigate('ForgetPass')}>
           Forgot Password?
@@ -130,7 +130,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
             alignSelf: 'center',
             alignItems: 'center',
             paddingVertical: 5,
-            marginTop: 50,
+            marginTop: 40,
             marginBottom: 30,
             backgroundColor: 'white',
           }}>

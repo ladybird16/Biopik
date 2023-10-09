@@ -26,11 +26,11 @@ const ForgetpassView = ({navigation}:ForgetpassViewProps) => {
     {/* <Icon name="arrow-back-outline" size={(30)}color={'white'}/> */}
     </TouchableOpacity>
     </View>
-    <View style={{marginTop:40,marginLeft:10}}>
+    <View style={{marginTop:25,marginLeft:40}}>
       <Text style={{fontSize:30,fontWeight:'bold'}}>Forget Password</Text>
     </View>
     <View style ={{backgroundColor:'#68d96f',
-        marginTop:70,
+        marginTop:50,
         marginLeft:30,
         marginRight:30,
         borderTopLeftRadius: 50, // Adjust the value to control the radius

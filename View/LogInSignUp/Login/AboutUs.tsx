@@ -3,8 +3,8 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <View>
-      <Text>krs</Text>
+    <View style={{backgroundColor:'white',flex:1}}>
+      <Text style={{marginLeft:40,fontWeight:'bold'}}>BioPik</Text>
     </View>
   )
 }
