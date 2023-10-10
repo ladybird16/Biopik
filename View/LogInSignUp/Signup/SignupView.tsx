@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form';
 import { Picker } from '@react-native-picker/picker';
@@ -25,10 +25,15 @@ const SignupView = ({navigation}:SignupViewProps) => {
       const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
    
   return (
-    <ScrollView style={{paddingBottom:10,marginBottom:10}}>
+    <ScrollView style={{paddingBottom:10,marginBottom:10,backgroundColor:'white'}}>
     <View >
      
-      
+    <View style={{marginTop:20,marginLeft:130}}>
+          <Image
+            source={require('../../../image/logo.png')}
+            style={{}}
+          />
+        </View>
       
         <View style ={{backgroundColor:'#68d96f',
         margin:20,
@@ -147,10 +152,9 @@ const SignupView = ({navigation}:SignupViewProps) => {
         control={control}
         rules={{
           required: true,
-          pattern: {
-            value: /^[^$,#]{8}$/,
-            message: 'Password must be 8 characters long and not contain $, #, or ,',
-          },
+          pattern:/^[^$,#]{8}$/, 
+      
+            // message: 'Password must be 8 characters long and not contain $, #, or ,',
           
         }}
         render={({field: {onChange, onBlur, value}}) => (
@@ -175,6 +179,7 @@ const SignupView = ({navigation}:SignupViewProps) => {
         control={control}
         rules={{
           required: true,
+          pattern:/^[^$,#]{8}$/,
           
         }}
         render={({field: {onChange, onBlur, value}}) => (

@@ -11,6 +11,8 @@ const MainRoute = () => {
     <Stack.Navigator screenOptions={{headerShown:false}}>
       <Stack.Screen name="LogInSignUp" component={LogInSignUp}  />
       <Stack.Screen name="Home" component={Home} />
+      
+      
     </Stack.Navigator>
   )
 }

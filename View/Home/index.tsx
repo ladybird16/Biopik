@@ -3,7 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
  import Icon from 'react-native-vector-icons/Ionicons';
-import Profile from './Profile';
+import Profile from './Profile/ProfileMain';
 import Cart from './Cart';
 import Dashboard from './Dashboard';
 import Order from './Order';
