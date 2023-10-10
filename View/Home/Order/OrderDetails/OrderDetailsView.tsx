@@ -176,7 +176,7 @@ const OrderDetailsView = ({navigation}:OrderDetailsViewProps) => {
     <ScrollView style={styles.productlist}>
       <Text style={styles.productName}>Order Details</Text>
 
-      <View>
+      <View style={{marginTop:15}}>
         <View style={styles.list}>
           <Text style={styles.Boxname}> KWS Jumbo Box</Text>
 
