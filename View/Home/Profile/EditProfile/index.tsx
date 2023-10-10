@@ -1,14 +1,21 @@
 import { View, Text } from 'react-native'
-import React from 'react'
-import EditProfileView from './EditProfileView'
+import React, { useEffect } from 'react'
+import EditProfileView from './EditProfile';
+
 
 const EditProfile = ({navigation}:EditProfileProps) => {
+
+
   return (
-    <EditProfileView navigation={navigation}   />
+    <EditProfileView navigation={navigation}  />
   )
 }
 
-export default EditProfile
-interface EditProfileProps{
-    navigation?: any;
+
+
+export default EditProfile;
+
+interface EditProfileProps{ 
+    navigation?:any;
+
   }

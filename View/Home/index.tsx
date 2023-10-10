@@ -3,10 +3,10 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
  import Icon from 'react-native-vector-icons/Ionicons';
-import Profile from './Profile/ProfileMain';
 import Cart from './Cart';
 import Dashboard from './Dashboard';
 import Order from './Order';
+import Profile from './Profile';
 const Tab = createBottomTabNavigator();
 const Home = () => {
 
@@ -14,7 +14,7 @@ const Home = () => {
 
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {backgroundColor: '#17b344'},
+        tabBarStyle: {backgroundColor: '#75c22d'},
         headerShown: false,
         tabBarShowLabel: false,      }}>
       <Tab.Screen
