@@ -22,11 +22,17 @@
     "react-native": "0.72.5",
     "react-native-axios": "^0.17.1",
     "react-native-gesture-handler": "^2.13.1",
+<<<<<<< HEAD
     "react-native-popup-menu": "^0.16.1",
     "react-native-radio-buttons-group": "^3.0.5",
+=======
+    "react-native-image-slider-box": "^2.0.7",
+    "react-native-linear-gradient": "^2.8.3",
+>>>>>>> 7b22bc8f2f6519443d24a23369864006274f2529
     "react-native-reanimated": "^3.5.4",
     "react-native-safe-area-context": "^4.7.2",
     "react-native-screens": "^3.25.0",
+    "react-native-step-indicator": "^1.0.3",
     "react-native-vector-icons": "^10.0.0"
   },
   "devDependencies": {

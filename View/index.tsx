@@ -4,16 +4,23 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import LogInSignUp from './LogInSignUp';
 import Home from './Home';
+import Drawer1 from './LogInSignUp/Drawer';
+import OrderDetailsView from './Home/Order/OrderDetails/OrderDetailsView';
+// import LogInSignUp from './LogInSignUp/Drawer';
 
 const Stack = createStackNavigator();
 const MainRoute = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="Home" component={Home} />
+       
+       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Drawer" component={Drawer1} />
+      
       <Stack.Screen name="LogInSignUp" component={LogInSignUp}  />
-    
-      
-      
+     
+   
+  
+     {/* <Stack.Screen name="Login" component={Drawer1} /> */}
     </Stack.Navigator>
   )
 }

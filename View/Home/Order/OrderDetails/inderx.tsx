@@ -1,12 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import OrderDetailsView from './OrderDetailsView'
 
-const OrderDetails = () => {
+const OrderDetail = ({ navigation }: OrderDetailProps) => {
   return (
     <View>
-      <Text>OrderDetails</Text>
+      <OrderDetailsView navigation={navigation} />
     </View>
   )
 }
 
-export default OrderDetails
+export default OrderDetail
+
+export interface OrderDetailProps{
+  navigation?: any;
+}

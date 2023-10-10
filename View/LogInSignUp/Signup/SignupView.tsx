@@ -267,7 +267,7 @@ const SignupView = ({navigation}:SignupViewProps) => {
             marginBottom: 10,
             backgroundColor:'white'
           }}>
-          <Text style={{color: '#154d19', fontSize: 19}}>SIGNUP</Text>
+          <Text style={{color: '#154d19', fontSize: 19}}>Submit</Text>
         </TouchableOpacity>
 
      

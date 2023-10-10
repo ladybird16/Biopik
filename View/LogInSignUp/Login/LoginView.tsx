@@ -1,8 +1,11 @@
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import forgetPass from './ForgetPass';
+import { DrawerActions } from '@react-navigation/native';
 
-const LoginView = () => {
+
+const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
   const {
     control,
     handleSubmit,
@@ -10,22 +13,28 @@ const LoginView = () => {
     getValues,
     formState: {errors},
   } = useForm();
+  
   return (
-    <View style={{backgroundColor:'white'}}>
-    <View style={{marginTop:30,marginLeft:10}}>
+    <View style={{backgroundColor:'white',flex:1}}>
+      <TouchableOpacity
+        // onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+        >
+        {/* <Text>Open Drawer</Text> */}
+      </TouchableOpacity>
+    {/* <View style={{marginTop:5,marginLeft:10}}>
       <Text style={{fontSize:30,fontWeight:'bold'}}>Welcome</Text>
-    </View>
-    <View style={{marginTop:15,marginLeft:10}}>
-      <Text style={{fontSize:17}}>Login into your Account</Text>
-      <View style={{marginTop:20,marginLeft:130}}>
+    </View> */}
+    {/* <View style={{marginTop:15,marginLeft:10}}>
+      <Text style={{fontSize:17}}>Login into your Account</Text></View> */}
+      <View style={{marginTop:10,marginLeft:130}}>
           <Image
             source={require('../../../image/logo.png')}
             style={{}}
           />
         </View>
-    </View>
+    
     <View style ={{backgroundColor:'#68d96f',
-        marginTop:10,
+        marginTop:20,
         marginLeft:30,
         marginRight:30,
         borderTopLeftRadius: 50, // Adjust the value to control the radius
@@ -101,11 +110,14 @@ const LoginView = () => {
         
 
         /> */}
-        <View style={{marginLeft:210}}>
-        <Text style={{color: 'white', fontSize: 16}}>
+        <TouchableOpacity>
+        <View style={{marginLeft:230,marginTop:10}}>
+        <Text style={{color: 'white', fontSize: 16}}
+         onPress={() => navigation.navigate('ForgetPass')}>
           Forgot Password?
         </Text>
         </View>
+        </TouchableOpacity>
         <TouchableOpacity
           // onPress={handleSubmit(onSubmit)}
           // onPress={() => {}}
@@ -118,7 +130,7 @@ const LoginView = () => {
             alignSelf: 'center',
             alignItems: 'center',
             paddingVertical: 5,
-            marginTop: 50,
+            marginTop: 40,
             marginBottom: 30,
             backgroundColor: 'white',
           }}>
@@ -129,15 +141,14 @@ const LoginView = () => {
       <View style={{marginTop:20}}><Text style={{color: 'black', fontSize: 16, textAlign: 'center'}}>
           Dont't have an account?{' '}
           <Text
-            // onPress={() => navigation.navigate('Signup')}
+            onPress={() => navigation.navigate('Signup')}
             style={{fontWeight: 'bold'}}>
             Signup
           </Text>
         </Text></View>
-        <View style={{marginLeft:65}}>
+        <View style={{marginLeft:65,marginVertical:10}}>
           <Image
             source={require('../../../image/veg.jpg')}
-            style={{}}
           />
         </View>
     </View>
@@ -147,3 +158,7 @@ const LoginView = () => {
 };
 
 export default LoginView
+interface LoginViewProps{
+  navigation?:any;
+  openDrawer?:any;
+}
