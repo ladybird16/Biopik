@@ -33,7 +33,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
           />
         </View>
     
-    <View style ={{backgroundColor:'#68d96f',
+    <View style ={{backgroundColor:'#83A2FF',
         marginTop:20,
         marginLeft:30,
         marginRight:30,
@@ -56,7 +56,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
             required: true,
             maxLength: 10,
             minLength: 10,
-            pattern: /^(\+\d{1,3}[- ]?)?\d{10}$/,
+            pattern: /^[0-9]*$/,
           }}
           render={({field: {onChange, onBlur, value}}) => (
             <View
@@ -69,6 +69,7 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
               }}>
               <TextInput
                 placeholder="Mobile Number"
+                keyboardType="numeric"
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
@@ -146,9 +147,9 @@ const LoginView = ({navigation,openDrawer}:LoginViewProps) => {
             Signup
           </Text>
         </Text></View>
-        <View style={{marginLeft:65,marginVertical:10}}>
+        <View style={{marginLeft:8,marginVertical:10}}>
           <Image
-            source={require('../../../image/veg.jpg')}
+            source={require('../../../image/veg.png')}
           />
         </View>
     </View>

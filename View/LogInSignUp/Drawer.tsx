@@ -8,6 +8,7 @@ import Signup from './Signup';
 import ForgetPass from './Login/ForgetPass';
 import { createStackNavigator } from '@react-navigation/stack';
 import LogInSignUp from '.';
+import ContactUs from './Login/ContactUs';
 
 
 
@@ -30,6 +31,7 @@ const Drawer1 = () => {
           <Drawer.Screen name=" " component={LogInSignUp} />
             <Drawer.Screen name="About Us" component={AboutUs} />
             <Drawer.Screen name="Feedback" component={Feedback}  />
+            <Drawer.Screen name="Contact Us" component={ContactUs}  />
             
           </Drawer.Navigator>
           </>

@@ -29,7 +29,7 @@ const ForgetpassView = ({navigation}:ForgetpassViewProps) => {
     <View style={{marginTop:25,marginLeft:40}}>
       <Text style={{fontSize:30,fontWeight:'bold'}}>Forget Password</Text>
     </View>
-    <View style ={{backgroundColor:'#68d96f',
+    <View style ={{backgroundColor:'#83A2FF',
         marginTop:50,
         marginLeft:30,
         marginRight:30,
